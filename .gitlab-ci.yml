@@ -43,6 +43,26 @@ e2e_testing:
   script:
     - echo "E2E TESTING RUNNING"
 
+sonar_qube:
+  allow_failure: false
+  stage: test
+  image:
+    name: sregistry.tccenter.ru/public/sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+    GIT_DEPTH: "0"
+  cache:
+    key: "sonar-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner -Dsonar.qualitygate.wait=true
+  only:
+    - merge_requests
+    - master
+    - develop
+
 build:
   stage: build
   allow_failure: false
