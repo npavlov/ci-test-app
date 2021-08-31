@@ -61,7 +61,6 @@ sonar_qube:
       -Dsonar.projectKey=$SONAR-PROJECT-NAME \
       -Dsonar.projectBaseDir=. \
       -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
-      -Dsonar.eslint.reportPaths=.eslintrc \
       -Dsonar.sources=src \
       -Dsonar.exclusions=**/*.spec.*,**/*.scss,**/*.test.* \
       -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN
