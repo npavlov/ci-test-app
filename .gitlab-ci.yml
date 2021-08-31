@@ -50,7 +50,7 @@ sonar_qube:
   image:
     name: registry.tccenter.ru/public/sonarsource/sonar-scanner-cli:latest
   variables:
-    SONAR-PROJECT-NAME: ci-test-app
+    SONAR_PROJECT_NAME: ci-test-app
   cache:
     key: "sonar-$CI_COMMIT_REF_SLUG"
     paths:
@@ -58,7 +58,7 @@ sonar_qube:
   script:
     - |
       sonar-scanner \
-      -Dsonar.projectKey=$SONAR-PROJECT-NAME \
+      -Dsonar.projectKey=$SONAR_PROJECT_NAME \
       -Dsonar.projectBaseDir=. \
       -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
       -Dsonar.sources=src \
