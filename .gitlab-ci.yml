@@ -12,12 +12,13 @@ stages:
 install_packages:
   stage: prepare
   allow_failure: false
+  timeout: 30 min
   before_script:
     - echo "PACKAGES WILL BE INSTALLED"
   script:
     - yarn install
   after_script:
-    - echo "PACKAGES HAS BEEN INSTALLED"
+    - echo "IT RUNS ALWAYS AFTER SECTION script"
   artifacts:
     name: "modules-$CI_COMMIT_REF_SLUG"
     expire_in: 1 week
@@ -32,6 +33,7 @@ install_packages:
 
 unit_testing:
   stage: test
+  timeout: 30 min
   script:
     - yarn test
 
@@ -44,6 +46,7 @@ e2e_testing:
 build:
   stage: build
   allow_failure: false
+  timeout: 30 min
   script:
     yarn build
   artifacts:
