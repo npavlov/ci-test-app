@@ -1,0 +1,45 @@
+image: registry.tccenter.ru/public/node:15.3.0
+
+stages:
+  - prepare
+  - test
+  - build
+  - publish
+
+install_packages:
+  stage: prepare
+  before_script:
+    - yarn install
+  script:
+    - echo "YARN PACKAGES INSTALLED"
+  artifacts:
+    name: "modules-$CI_COMMIT_REF_SLUG"
+    expire_in: 1 week
+    paths:
+      - node_modules/
+    when: "always"
+  cache:
+    key: yarn-$CI_COMMIT_REF_SLUG
+    paths:
+      - .yarn/cache/
+    policy: pull-push
+
+unit_testing:
+  stage: test
+  script:
+    - yarn test
+
+e2e_testing:
+  stage: test
+  script:
+    - echo "E2E TESTING RUNNING"
+
+build:
+  stage: build
+  script:
+    - yarn build
+  artifacts:
+    name: "build-$CI_COMMIT_REF_SLUG"
+    expire_in: 1 week
+    paths:
+      - build/
