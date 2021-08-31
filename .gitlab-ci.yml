@@ -11,6 +11,7 @@ stages:
 
 install_packages:
   stage: prepare
+  allow_failure: false
   before_script:
     - echo "PACKAGES WILL BE INSTALLED"
   script:
@@ -35,12 +36,14 @@ unit_testing:
     - yarn test
 
 e2e_testing:
+  allow_failure: true
   stage: test
   script:
     - echo "E2E TESTING RUNNING"
 
 build:
   stage: build
+  allow_failure: false
   script:
     yarn build
   artifacts:
@@ -48,3 +51,23 @@ build:
     expire_in: 1 week
     paths:
       - build/
+
+
+publish:
+  stage: publish
+  image: registry.tccenter.ru/public/docker:18.09-dind
+  services:
+    - registry.tccenter.ru/public/docker:18.09-dind
+  variables:
+    harborAddress: "registry.tccenter.ru"
+    harborRepository: "it-delivery/ci-test-app"
+  when: manual
+  before_script:
+    - docker login $harborAddress -u ${ITD_USER} -p ${ITD_PASS}
+  script:
+    - ls
+    - export DOCKER_HOST="tcp://localhost:2375"
+    - docker build -t $harborAddress/$harborRepository .
+    - docker push $harborAddress/$harborRepository
+  after_script:
+    - docker logout $harborAddress
