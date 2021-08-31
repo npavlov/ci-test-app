@@ -4,6 +4,38 @@ import { TabsResponsive, Tab } from '@alfalab/core-components/tabs/responsive';
 import './home.css';
 
 export const Home = () => {
+    var a = 1;
+    
+    let b;
+
+    const x = () => {
+
+    }
+
+    var a1 = 1;
+
+    let b1;
+
+    const x1 = () => {
+
+    }
+
+    var a2 = 1;
+
+    let b2;
+
+    const x2 = () => {
+
+    }
+
+    var a3 = 1;
+
+    let b3;
+
+    const x3 = () => {
+
+    }
+
     const [selectedId, setSelectedId] = React.useState('tab-1');
 
     const handleChange = (event: any, {selectedId}: any) => setSelectedId(selectedId);
