@@ -2,7 +2,6 @@ image: registry.tccenter.ru/public/node:15.3.0
 
 variables:
   CI: 'FALSE'
-  SONAR_HOST_URL: 'https://sonarqube.tccenter.ru'
 
 stages:
   - prepare
@@ -51,6 +50,7 @@ sonar_qube:
     name: registry.tccenter.ru/public/sonarsource/sonar-scanner-cli:latest
   variables:
     SONAR_PROJECT_NAME: ci-test-app
+    SONAR_HOST: 'https://sonarqube.tccenter.ru'
   cache:
     key: "sonar-$CI_COMMIT_REF_SLUG"
     paths:
