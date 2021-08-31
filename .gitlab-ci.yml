@@ -48,7 +48,7 @@ sonar_qube:
   allow_failure: false
   stage: test
   image:
-    name: registry.tccenter.ru/lottery-terminals/wt/tools/sonar-scanner:4.3
+    name: registry.tccenter.ru/public/sonarsource/sonar-scanner-cli:latest
   variables:
     SONAR-PROJECT-NAME: ci-test-app
   cache:
