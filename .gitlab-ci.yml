@@ -6,6 +6,7 @@ variables:
 stages:
   - prepare
   - test
+  - qualitygate
   - build
   - publish
 
@@ -69,6 +70,12 @@ sonar_qube:
     - merge_requests
     - master
     - develop
+
+sonar_quality_gate:
+  stage: qualitygate
+  allow_failure: false
+  script:
+    - node ./check-quality-gate.js
 
 build:
   stage: build
