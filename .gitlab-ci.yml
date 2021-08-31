@@ -37,7 +37,7 @@ e2e_testing:
 build:
   stage: build
   script:
-    - yarn build
+    - CI = false && yarn build
   artifacts:
     name: "build-$CI_COMMIT_REF_SLUG"
     expire_in: 1 week
