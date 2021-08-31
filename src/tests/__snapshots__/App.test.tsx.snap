@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="header-div"
+    >
+      <div
+        class="typography__component_1v586 typography__styrene-xlarge_csqb7 typography__medium_csqb7 typography__primary_1kuiz"
+      >
+        Header
+      </div>
+      <div
+        class="header-grid"
+      >
+        <div
+          class="grid__row_14ndf grid__component_1uhhv grid__middle_1uhhv grid__center_1uhhv grid__gutter-tablet-16_14ndf grid__gutter-desktop-m-24_14ndf"
+        >
+          <div
+            class="grid__col_14ndf grid__component_1f1l8"
+          >
+            <a
+              href="/"
+              style="text-decoration: none;"
+            >
+              <a
+                class="link__component_w438v link__primary_bqip1 link__pseudo_w438v"
+              >
+                <span
+                  class="link__text_w438v"
+                >
+                  Home
+                </span>
+              </a>
+            </a>
+          </div>
+          <div
+            class="grid__col_14ndf grid__component_1f1l8"
+          >
+            <a
+              href="/other"
+              style="text-decoration: none;"
+            >
+              <a
+                class="link__component_w438v link__primary_bqip1 link__pseudo_w438v"
+              >
+                <span
+                  class="link__text_w438v"
+                >
+                  Other
+                </span>
+              </a>
+            </a>
+          </div>
+          <div
+            class="grid__col_14ndf grid__component_1f1l8"
+          >
+            <a
+              href="/about"
+              style="text-decoration: none;"
+            >
+              <a
+                class="link__component_w438v link__primary_bqip1 link__pseudo_w438v"
+              >
+                <span
+                  class="link__text_w438v"
+                >
+                  About
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="typography__component_1v586 typography__styrene-medium_csqb7 typography__medium_csqb7 typography__secondary_1kuiz"
+    >
+      Домашняя страница
+    </div>
+    <div
+      class="home-tabs"
+    >
+      <div>
+        <div
+          class="tabs__component_nesyh tabs__m_nesyh"
+          role="tablist"
+        >
+          <div
+            class="tabs__container_nesyh"
+          >
+            <button
+              aria-selected="true"
+              class="tabs__title_nesyh tabs__selected_nesyh"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span>
+                Таб 1
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="tabs__title_nesyh"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                Таб 2
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="tabs__title_nesyh"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                Таб 3
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="tabs__title_nesyh"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                Таб 4
+              </span>
+            </button>
+            <button
+              aria-selected="false"
+              class="tabs__title_nesyh"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                Таб 5
+              </span>
+            </button>
+            <div
+              class="tabs__line_nesyh"
+              style="width: 0px; transform: translateX(0px);"
+            />
+          </div>
+        </div>
+        <div
+          class="tabs__component_9ix6s"
+          role="tabpanel"
+          tabindex="0"
+        >
+          Таб 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="typography__component_1v586 typography__styrene-large_csqb7 typography__medium_csqb7 typography__primary_1kuiz"
+    >
+      Footer
+    </div>
+  </div>
+</div>
+`;
