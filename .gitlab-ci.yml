@@ -2,6 +2,7 @@ image: registry.tccenter.ru/public/node:15.3.0
 
 variables:
   CI: 'FALSE'
+  SONAR_HOST_URL: 'https://sonarqube.tccenter.ru'
 
 stages:
   - prepare
