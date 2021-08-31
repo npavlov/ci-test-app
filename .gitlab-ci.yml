@@ -12,9 +12,11 @@ stages:
 install_packages:
   stage: prepare
   before_script:
-    - yarn install
+    - echo "PACKAGES WILL BE INSTALLED"
   script:
-    - echo "YARN PACKAGES INSTALLED"
+    - yarn install
+  after_script:
+    - echo "PACKAGES HAS BEEN INSTALLED"
   artifacts:
     name: "modules-$CI_COMMIT_REF_SLUG"
     expire_in: 1 week
