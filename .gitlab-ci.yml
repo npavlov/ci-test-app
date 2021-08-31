@@ -47,7 +47,7 @@ sonar_qube:
   allow_failure: false
   stage: test
   image:
-    name: sregistry.tccenter.ru/public/sonarsource/sonar-scanner-cli:latest
+    name: registry.tccenter.ru/public/sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
   variables:
     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
